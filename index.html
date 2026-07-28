@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aura d'Afrique - Luxe Boutique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#4b1b00",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-secondary-container": "#86c5b3",
+                        "on-secondary": "#00382e",
+                        "tertiary-fixed": "#ffe088",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#3e2c28",
+                        "on-secondary-fixed-variant": "#065043",
+                        "on-primary": "#562000",
+                        "on-tertiary": "#3c2f00",
+                        "surface-container-highest": "#43302c",
+                        "secondary-container": "#0b5345",
+                        "surface-bright": "#483530",
+                        "inverse-surface": "#fadcd5",
+                        "on-secondary-fixed": "#00201a",
+                        "surface-tint": "#ffb693",
+                        "surface-dim": "#1e100c",
+                        "on-tertiary-container": "#4f3e00",
+                        "primary-fixed": "#ffdbcc",
+                        "secondary-fixed-dim": "#94d3c1",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "surface-container-lowest": "#180b07",
+                        "secondary-fixed": "#afefdd",
+                        "outline-variant": "#584238",
+                        "surface-container-low": "#271814",
+                        "secondary": "#94d3c1",
+                        "surface-container": "#2c1c18",
+                        "error-container": "#93000a",
+                        "background": "#1e100c",
+                        "surface-container-high": "#372622",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "outline": "#a78b7e",
+                        "inverse-primary": "#a04100",
+                        "on-surface": "#fadcd5",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "error": "#ffb4ab",
+                        "on-background": "#fadcd5",
+                        "primary-container": "#ea6b1e",
+                        "tertiary-container": "#cca830",
+                        "primary": "#ffb693",
+                        "surface": "#1e100c",
+                        "on-primary-fixed": "#351000",
+                        "tertiary": "#e9c349",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-surface-variant": "#e0c0b2",
+                        "on-error": "#690005",
+                        "surface-variant": "#43302c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Be Vietnam Pro"],
+                        "headline-lg": ["Bodoni Moda"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "label-lg": ["Be Vietnam Pro"],
+                        "headline-md": ["Bodoni Moda"],
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "headline-xl": ["Bodoni Moda"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .bogolan-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30 30 0zm0 10L10 30l20 20 20-20-20-20z' fill='%23584238' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .scroll-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Top Navigation Bar -->
+    <header
+        class="bg-background dark:bg-background flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full top-0 sticky border-b border-outline-variant/30 transition-all duration-300 ease-in-out z-[60]">
+        <a href="./index.html" class="flex items-center gap-4">
+            <!-- <button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">menu</button> -->
+            <h1 class="font-headline-md text-headline-md text-primary dark:text-primary tracking-tight">Aura d'Afrique
+            </h1>
+        </a>
+        <div class="hidden md:flex gap-8">
+            <a class="font-label-lg text-label-lg text-primary" href="./index.html">Accueil</a>
+            <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors"
+                href="./collection.html">Catalogue</a>
+            <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors"
+                href="./favoris.html">favorites</a>
+        </div>
+        <a href="panier.html" class="flex items-center gap-4">
+            <!-- <button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">search</button> -->
+            <button
+                class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">shopping_bag</button>
+        </a>
+    </header>
+    <main class="bogolan-pattern">
+        <!-- Hero Section -->
+        <section class="relative h-[751px] overflow-hidden flex flex-col md:flex-row">
+            <div class="w-full md:w-7/12 h-2/3 md:h-full relative overflow-hidden">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 md:hidden">
+                </div>
+                <img class="w-full h-full object-cover"
+                    data-alt="A high-fashion editorial portrait of a West African model wearing a structured silk blazer with subtle traditional geometric prints. The model is posed against a warm, sun-drenched terracotta wall. Lighting is soft and cinematic, highlighting the rich textures of the fabric and the glowing skin. The aesthetic is modern African luxury, sophisticated and minimalist."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa0RY4_2mqygVE2oBG2MzFMWGig1EGGJFKdUce37-eXnMM7zfl1NQOzoxDnKl5jxl-ZX6zctI8uxDyJOIJYuAY5RjQcvlgs7MSllS5u7o6S_yUL64-wsTD2ONySkMlBdmmls29o5ONKIiqMu2HS_xaxsolpPUi0pwZVY4adIgKGvLMftPaMqHy7AdoIKebIHgvVEtmiguDwT4o3PwhklIIH3o2i28MFrlieuzfHWwgCh5yCZTF9Ql2D1ZPRo5d2lSxYDyx0u3ibqHW" />
+            </div>
+            <div
+                class="w-full md:w-5/12 flex flex-col justify-center px-margin-mobile md:px-margin-desktop py-12 bg-background md:bg-transparent">
+                <div class="fade-in">
+                    <span
+                        class="text-tertiary font-label-lg text-label-lg uppercase tracking-widest mb-4 block">Collection
+                        Printemps 2024</span>
+                    <h1 class="font-headline-xl text-[48px] md:text-headline-xl text-primary leading-tight mb-6">
+                        Élégance Ancestrale, <br />Luxe Contemporain.</h1>
+                    <p class="text-on-surface-variant font-body-lg text-body-lg max-w-md mb-8">
+                        Redécouvrez l'héritage textile africain à travers des coupes architecturales et des matières
+                        nobles. Conçu pour l'âme moderne.
+                    </p>
+                    <div class="flex gap-4">
+                        <button
+                            class="h-[52px] px-8 bg-primary-container text-on-primary-container font-label-lg text-label-lg transition-transform active:scale-95 hover:brightness-110">
+                            VOIR LA COLLECTION
+                        </button>
+                        <button
+                            class="h-[52px] px-8 border border-outline text-primary font-label-lg text-label-lg hover:bg-primary/5 transition-colors">
+                            NOTRE HISTOIRE
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Categories: Collections de Prestige -->
+        <section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low/30">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">
+                        Collections de Prestige</h2>
+                    <div class="w-24 h-1 bg-tertiary-container"></div>
+                </div>
+                <p class="text-on-surface-variant max-w-xs font-body-md text-body-md text-right">Explorez l'art de vivre
+                    Aura d'Afrique à travers nos sélections curatées.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <!-- Nouveautés -->
+                <div
+                    class="group relative aspect-[3/4] overflow-hidden bg-surface-container-high transition-all duration-500 hover:scale-[1.02]">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                        data-alt="An artistic flat lay of a minimalist linen tunic in earthy tones, layered with a gold geometric statement necklace. The background is a textured deep umber surface. Lighting is high-contrast, luxury editorial style. Colors are terracotta, deep brown, and shimmering gold."
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDX2Dt5ZXIiLCWtblT5wnrEFJrRWd06Vn7NIunpsDauuq-JhATQKwTZ3jsqx3T1Gq_0QzsmWtl3CXnLvbLS9i2lWFE6OejSmyspNDfbvgSR9a8nJ5MbfWGSzfJDXNo_KZLXmLChTKt4Zgiju48DpIkiPGZGby645Tqws-y_k1UPcS5I_jqQ_E35BHvezkGCy3w3nErBW5Uc2vJw6BFQjpJ6xC-0hhdlcaRP5jn0j45T3TeX5SbkYsh9Y9nSQHgf0mt50tJzXKKo65S6')">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span
+                            class="bg-secondary text-on-secondary text-[10px] px-2 py-1 mb-2 inline-block tracking-tighter uppercase font-label-sm">Limited
+                            Edition</span>
+                        <h3 class="font-headline-md text-headline-md text-on-surface">Nouveautés</h3>
+                        <a class="text-tertiary font-label-lg text-label-lg flex items-center mt-2 group-hover:gap-3 transition-all"
+                            href="#">
+                            DÉCOUVRIR <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Femme -->
+                <div
+                    class="group relative aspect-[3/4] overflow-hidden bg-surface-container-high transition-all duration-500 hover:scale-[1.02]">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                        data-alt="A striking image of a woman in profile, wearing a flowing terracotta silk dress with architectural draping. The silhouette is sharp and sophisticated. Background is a neutral minimalist studio setting with soft shadows. Modern luxury African aesthetic."
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwboVy2pSdD0oVZysM-ZDWO0D3wbzvtneIqdxWcJ8Pf5GCrCGhMbpxxZKoPmP8ECpyWnpah0XmyZQar4wmlRFhtDm7pk5o8LstJ8tzSh9DrMrd0Ewx3JeTDMPR4cOIh-ElWJ3J7kTJL6NimWlxslBplDHDCS_DrIsY-EDXnuKJA4H65pzT3NxYym0swjdE9s35DuzN-WbWe4kuLWGMgtZEYi6rBUNqkrauPsLaYD1xcUdfAmLkKvK8XO8cEjMdFZAI6g_9w6RhyjEb')">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <h3 class="font-headline-md text-headline-md text-on-surface">Femme</h3>
+                        <a class="text-tertiary font-label-lg text-label-lg flex items-center mt-2 group-hover:gap-3 transition-all"
+                            href="#">
+                            SHOP FEMME <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Homme -->
+                <div
+                    class="group relative aspect-[3/4] overflow-hidden bg-surface-container-high transition-all duration-500 hover:scale-[1.02]">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                        data-alt="A close-up shot of a man's hands adjusting a tailored blazer made from heavy ivory linen with deep ochre embroidery details. High-end luxury craftsmanship visible in the stitching. Rich chocolate brown tones and warm lighting."
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJjJnY0aT-iztHHvm-KLlYmsD0EwmPHwScvh-6TGN2Y8PD-gke74aaKgVQgAJsJHFTsiL-9rjIpcpO6DatttidL4sVuoFmmPhrEOK6FP-VwKHxq1FPZZ8fVqy_N_U0FDXgBgn1d1-Se6C-TUq3RwM2g6XCdVS8rBhZPtlU18UeNJFhn393z1ACCjb06LZvVxAD2hXtQuX3Dx1q8_a4W6yYN0qsn6k5EveFCPndFIf70FDpSLD4nRgERu176nEnPpRsqfg9hzG7nXg5')">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <h3 class="font-headline-md text-headline-md text-on-surface">Homme</h3>
+                        <a class="text-tertiary font-label-lg text-label-lg flex items-center mt-2 group-hover:gap-3 transition-all"
+                            href="#">
+                            SHOP HOMME <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Accessoires -->
+                <div
+                    class="group relative aspect-[3/4] overflow-hidden bg-surface-container-high transition-all duration-500 hover:scale-[1.02]">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                        data-alt="A luxury display of handcrafted leather accessories, including a deep mahogany wallet and a brass-buckled belt, arranged on a geometric stone pedestal. Subtle African motifs are embossed on the leather. Soft amber lighting, editorial vibe."
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZkaDON3SqJcQVqCUrDkeU9pk_R6WmHpiXEsV-CnYHNg3eJJJs0vJRlHRQDWdudPXCgy1ZnYqwtom7oKgrcH47cJ3EtOtb_uvPM491pbuS7vBhv6L3Pr7-gxYa7tVGZzIhc6snxZkTA6UMXz-TfWtOsZGg9nWlAIiY9zG8EH9f3oTN15nMtb_q3U2-xhYyIRv23HcbCaId_MUKmjzgQYsCDh_UAkKNVnSmzQutq1gAmzZnp78nHGn0Lgrwx92CHi4GU3pbTHodelGf')">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <h3 class="font-headline-md text-headline-md text-on-surface">Accessoires</h3>
+                        <a class="text-tertiary font-label-lg text-label-lg flex items-center mt-2 group-hover:gap-3 transition-all"
+                            href="#">
+                            VOIR TOUT <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Product Spotlight: Les Incontournables -->
+        <section class="py-24 bg-surface-dim overflow-hidden">
+            <div class="px-margin-mobile md:px-margin-desktop mb-12 flex items-center justify-between">
+                <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Les
+                    Incontournables</h2>
+                <div class="flex gap-4">
+                    <button
+                        class="w-12 h-12 rounded-full border border-outline flex items-center justify-center text-primary hover:bg-primary/10 transition-colors">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button
+                        class="w-12 h-12 rounded-full border border-outline flex items-center justify-center text-primary hover:bg-primary/10 transition-colors">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+            <div class="flex gap-8 overflow-x-auto scroll-hide px-margin-mobile md:px-margin-desktop pb-12">
+                <!-- Product 1: Signature Handbag -->
+                <div class="min-w-[300px] md:min-w-[450px] group">
+                    <div
+                        class="aspect-[4/5] bg-surface-container mb-6 overflow-hidden relative border border-outline-variant/10">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Close up of a luxury designer handbag made from deep burgundy full-grain leather with a structured architectural handle and a small gold-finished brass logo of a sun. The bag sits on a minimalist clay-colored surface. Dramatic lighting from the side creating soft shadows."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4-cSBUFDpSZAKOX_wHCFJ0E98bv0vMz0eXJP3IoN0O4N7WB9IKXHNgt3gKFDHplfePedU_tjBt53DCw73je_p3j-vFaegtYglDqncyHJCAPcVYRf7Q99QZLn0W6vII-ONSIDloNnxxQIx038VnveZTI4PED1MXzHXEe_L4IgX2Zng-riIcS4y3iYPBLCPo510V76dQQPbL7hj2BdPS5oliTR38mgS3PRi1vHvf6gDa8AgAwToLvd8Huhp2BHdxzZdCNx9m5XtvhgG" />
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="w-10 h-10 rounded-full bg-background/50 backdrop-blur-sm flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 0;">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-headline-md text-headline-md text-on-surface mb-1">Le Sac "Sundiata"</h4>
+                            <p class="text-on-surface-variant font-body-md text-body-md italic">Cuir pleine fleur &amp;
+                                Bronze brossé</p>
+                        </div>
+                        <span class="font-label-lg text-label-lg text-tertiary">819 946 FCFA</span>
+                    </div>
+                </div>
+                <!-- Product 2: Signature Sunglasses -->
+                <div class="min-w-[300px] md:min-w-[450px] group">
+                    <div
+                        class="aspect-[4/5] bg-surface-container mb-6 overflow-hidden relative border border-outline-variant/10">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="High-end designer sunglasses with thick tortoiseshell frames and gold accents at the temples. The lenses reflect a warm sunset. They are displayed against a background of woven raffia. Luxurious, editorial, warm tones."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZPK9fGY_-KGdhO3K4wkv7Vu57G-LMHowNMbykGbTsqF-XOVJ9Q_b8Yy0sGrL0v-mUhdDvXxDtiyI2SR1i70TO9dxFnVqVqAmCxYjbp2P8QxadLHrOVq9RkReGvsvcc1gNsH3flRgLP9icruRRiv_JfcCJQngvPHZb6A45vSwmbIEh2mOeLfBfSL1I2fwG2-5HQmSbL0eoC5TNdLoFkoDAzUlF_n97DtE7QHI08WhHUTkbHRSUf6iYDy3Dc5P563CfjX-_HXnq7OUR" />
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="w-10 h-10 rounded-full bg-background/50 backdrop-blur-sm flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 0;">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-headline-md text-headline-md text-on-surface mb-1">Lunettes "Orizu"</h4>
+                            <p class="text-on-surface-variant font-body-md text-body-md italic">Acétate recyclé &amp; Or
+                                18k</p>
+                        </div>
+                        <span class="font-label-lg text-label-lg text-tertiary">249 264 FCFA</span>
+                    </div>
+                </div>
+                <!-- Product 3: Silk Scarf -->
+                <div class="min-w-[300px] md:min-w-[450px] group">
+                    <div
+                        class="aspect-[4/5] bg-surface-container mb-6 overflow-hidden relative border border-outline-variant/10">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="A luxurious oversized silk scarf draped elegantly, featuring a vibrant geometric pattern in mustard yellow, burnt orange, and deep teal. The fabric has a high-quality sheen. Captured in a minimalist studio environment with clean lines."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqCklAWA2QE1DcrloaAh0fDXPROQc8X0IRz0tVH3RgKAqS11HSLGGPue0v1K4OsvKPyB7RoOOLJ2XvDyXiTOCydFH1bK9Gks37F_dV87Tjcnmvi8XkW1PZGQCwEzB1o_2rQYAyu8GDB3IHrRpkUqQUBqzidnrtS4NszDHFe4T_9qFR232EwFTufWR8U4NhRB6wb_y2igiS6JAfHbCESk4OlUs-4hLqRdHWrSKhByfYjUgNucdvNu7juloGgaPsr_7wqi9xx7-pvfpR" />
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="w-10 h-10 rounded-full bg-background/50 backdrop-blur-sm flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 0;">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-headline-md text-headline-md text-on-surface mb-1">Carré de Soie "Kente"
+                            </h4>
+                            <p class="text-on-surface-variant font-body-md text-body-md italic">Soie de mûrier peinte à
+                                la main</p>
+                        </div>
+                        <span class="font-label-lg text-label-lg text-tertiary">144 311 FCFA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Brand Story: L'Artisanat d'Afrique -->
+        <section class="py-32 px-margin-mobile md:px-margin-desktop bg-surface-container relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+                <svg class="w-full h-full fill-primary" viewbox="0 0 100 100">
+                    <path d="M50 0 L100 50 L50 100 L0 50 Z"></path>
+                </svg>
+            </div>
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <span class="text-tertiary font-label-lg text-label-lg uppercase tracking-widest mb-6 block">Notre
+                    Éthique</span>
+                <h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary mb-10 italic">
+                    L'Artisanat d'Afrique : Un Dialogue entre Hier et Demain.</h2>
+                <div class="w-16 h-[2px] bg-outline-variant mx-auto mb-10"></div>
+                <p class="text-on-surface font-body-lg text-body-lg leading-relaxed mb-12">
+                    Aura d'Afrique ne se contente pas de créer des vêtements ; nous préservons des savoir-faire
+                    séculaires. Chaque pièce est le fruit d'une collaboration étroite avec des maîtres artisans du Mali,
+                    du Ghana et du Sénégal, alliant la précision du luxe moderne à la vibration spirituelle des
+                    techniques ancestrales.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mt-20">
+                    <div class="p-6 bg-background/40 backdrop-blur border-l-2 border-primary-container">
+                        <h5 class="font-headline-md text-on-surface mb-3">Matières Nobles</h5>
+                        <p class="text-on-surface-variant font-body-md">Soies sauvages, cotons biologiques et cuirs
+                            tannés végétalement.</p>
+                    </div>
+                    <div class="p-6 bg-background/40 backdrop-blur border-l-2 border-tertiary-container">
+                        <h5 class="font-headline-md text-on-surface mb-3">Impact Local</h5>
+                        <p class="text-on-surface-variant font-body-md">Rémunération équitable et soutien aux
+                            coopératives de femmes.</p>
+                    </div>
+                    <div class="p-6 bg-background/40 backdrop-blur border-l-2 border-secondary">
+                        <h5 class="font-headline-md text-on-surface mb-3">Design Intemporel</h5>
+                        <p class="text-on-surface-variant font-body-md">Des silhouettes qui transcendent les saisons et
+                            les modes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Newsletter / Editorial Callout -->
+        <section class="py-24 px-margin-mobile md:px-margin-desktop bg-background border-t border-outline-variant/20">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="w-full md:w-1/2 aspect-square overflow-hidden">
+                    <img class="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition-all duration-1000"
+                        data-alt="A cinematic black and white image of a workshop in Dakar, showing a master artisan's hands carefully weaving a complex geometric pattern on a traditional loom. The lighting is moody and focused on the hands and the texture of the threads. High-end documentary style."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwZgg8C1OtKuzuaozrPAM9u9MVfxVNu0R0SkUyPVoVkU9Jn-2WQKsz59KNOVMyMCaFI1uGuMo3e1KpChlPxD507BDnJjw483jJH6acYBfPrJpMob8rCCUu6EcxZf43pNyg1OUeGY8bGke1tXx_sBB2ougP2Djv9W1D7e8YNxjfahJp9NkDxmyzdF6TImvB41SPztCVjI6BT7QhaMvJGHLBx01pOwX67osQ6-Wjmmb4jiGyAep2M3XN49B_GqzFMViGUA_Tbgc7KbQD" />
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6">Restez
+                        à l'Aura</h3>
+                    <p class="text-on-surface-variant font-body-lg text-body-lg mb-8">Rejoignez notre cercle restreint
+                        pour recevoir nos éditoriaux exclusifs, nos lancements en avant-première et les récits de nos
+                        artisans.</p>
+                    <form class="space-y-6">
+                        <div class="relative">
+                            <input
+                                class="w-full bg-transparent border-0 border-b border-outline py-4 focus:ring-0 focus:border-primary transition-colors text-on-surface placeholder:text-outline/50 font-label-lg"
+                                placeholder="Votre adresse email" type="email" />
+                        </div>
+                        <button
+                            class="w-full md:w-auto px-12 h-[52px] bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-fixed-dim transition-colors"
+                            type="submit">
+                            S'INSCRIRE
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Comprehensive Footer -->
+    <footer
+        class="bg-surface-container-lowest pt-24 pb-32 md:pb-12 px-margin-mobile md:px-margin-desktop border-t border-outline-variant/10">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+            <!-- Brand Info -->
+            <div class="col-span-1 md:col-span-4">
+                <a class="font-headline-md text-primary mb-6 block" href="#">Aura d'Afrique</a>
+                <p class="text-on-surface-variant font-body-md mb-8 max-w-sm">Le luxe qui porte une âme. L'Afrique qui
+                    inspire le monde à travers une élégance intemporelle et un artisanat d'exception.</p>
+                <div class="flex gap-4 mb-8">
+                    <a class="w-10 h-10 rounded-full border border-outline/30 flex items-center justify-center text-outline hover:text-primary hover:border-primary transition-all"
+                        href="#"><span class="material-symbols-outlined text-xl">public</span></a>
+                    <a class="w-10 h-10 rounded-full border border-outline/30 flex items-center justify-center text-outline hover:text-primary hover:border-primary transition-all"
+                        href="#"><span class="material-symbols-outlined text-xl">share</span></a>
+                    <a class="w-10 h-10 rounded-full border border-outline/30 flex items-center justify-center text-outline hover:text-primary hover:border-primary transition-all"
+                        href="#"><span class="material-symbols-outlined text-xl">camera</span></a>
+                </div>
+                <div class="relative inline-block">
+                    <select
+                        class="bg-transparent border border-outline/30 text-on-surface font-label-sm px-4 py-2 pr-10 focus:ring-1 focus:ring-primary appearance-none cursor-pointer">
+                        <option>Sénégal (FCFA)</option>
+                        <option>Côte d'Ivoire (FCFA)</option>
+                        <option>France (EUR)</option>
+                        <option>USA (USD)</option>
+                    </select>
+                    <span
+                        class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-sm">expand_more</span>
+                </div>
+            </div>
+            <!-- Navigation Groups -->
+            <div class="col-span-1 md:col-span-2">
+                <h5 class="text-on-surface font-label-lg uppercase tracking-widest mb-8">Boutique</h5>
+                <ul class="space-y-4 text-on-surface-variant font-label-sm">
+                    <li><a class="hover:text-primary transition-colors" href="./collection.html">Collections</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="./collection.html">Accessoires</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Éditions Limitées</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Prêt-à-porter</a></li>
+                </ul>
+            </div>
+            <div class="col-span-1 md:col-span-2">
+                <h5 class="text-on-surface font-label-lg uppercase tracking-widest mb-8">L'Esprit Aura</h5>
+                <ul class="space-y-4 text-on-surface-variant font-label-sm">
+                    <li><a class="hover:text-primary transition-colors" href="#">L'Artisanat</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Engagement Éthique</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Journal d'Afrique</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Nos Points de Vente</a></li>
+                </ul>
+            </div>
+            <div class="col-span-1 md:col-span-2">
+                <h5 class="text-on-surface font-label-lg uppercase tracking-widest mb-8">Aide</h5>
+                <ul class="space-y-4 text-on-surface-variant font-label-sm">
+                    <li><a class="hover:text-primary transition-colors" href="#">Livraison & Retours</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Guide des Tailles</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <!-- Newsletter (Footer version) -->
+            <div class="col-span-1 md:col-span-2">
+                <h5 class="text-on-surface font-label-lg uppercase tracking-widest mb-8">Newsletter</h5>
+                <p class="text-on-surface-variant font-label-sm mb-4">Inscrivez-vous pour nos actualités exclusives.</p>
+                <div class="flex border-b border-outline/30 pb-2">
+                    <input
+                        class="bg-transparent border-0 p-0 text-on-surface placeholder:text-outline/50 w-full focus:ring-0 font-label-sm"
+                        placeholder="Email..." type="email" />
+                    <button class="text-primary hover:opacity-80"><span
+                            class="material-symbols-outlined">arrow_forward</span></button>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Footer Legal -->
+        <div
+            class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-outline-variant/10 text-outline text-[10px] uppercase tracking-widest">
+            <p>© 2024 Aura d'Afrique. Tous droits réservés.</p>
+            <div class="flex gap-8 mt-4 md:mt-0">
+                <a class="hover:text-primary transition-colors" href="#">Politique de Confidentialité</a>
+                <a class="hover:text-primary transition-colors" href="#">CGV</a>
+                <a class="hover:text-primary transition-colors" href="#">Mentions Légales</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Bottom Navigation Bar (Mobile only) -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-surface-container dark:bg-surface-container border-t border-outline-variant/20 shadow-sm">
+        <a class="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-full py-1 px-3 scale-95 active:scale-90 transition-transform"
+            href="./index.html">
+            <span class="material-symbols-outlined">home</span>
+            <span class="font-label-sm text-label-sm">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90 transition-transform"
+            href="./collection.html">
+            <span class="material-symbols-outlined">menu_book</span>
+            <span class="font-label-sm text-label-sm">Catalogue</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90 transition-transform"
+            href="./favoris.html">
+            <span class="material-symbols-outlined">favorite</span>
+            <span class="font-label-sm text-label-sm">Favorites</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90 transition-transform"
+            href="./panier.html">
+            <span class="material-symbols-outlined">shopping_bag</span>
+            <span class="font-label-sm text-label-sm">Panier</span>
+        </a>
+    </nav>
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('opacity-0');
+            observer.observe(section);
+        });
+
+        // Add class to fix opacity after observing
+        document.querySelectorAll('section').forEach(section => {
+            section.style.animationFillMode = 'forwards';
+        });
+    </script>
+</body>
+
+</html>

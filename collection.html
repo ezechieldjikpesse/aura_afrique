@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html class="dark" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>La Collection | Aura d'Afrique - Luxe Boutique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Be+Vietnam+Pro:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#4b1b00",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-secondary-container": "#86c5b3",
+                        "on-secondary": "#00382e",
+                        "tertiary-fixed": "#ffe088",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#3e2c28",
+                        "on-secondary-fixed-variant": "#065043",
+                        "on-primary": "#562000",
+                        "on-tertiary": "#3c2f00",
+                        "surface-container-highest": "#43302c",
+                        "secondary-container": "#0b5345",
+                        "surface-bright": "#483530",
+                        "inverse-surface": "#fadcd5",
+                        "on-secondary-fixed": "#00201a",
+                        "surface-tint": "#ffb693",
+                        "surface-dim": "#1e100c",
+                        "on-tertiary-container": "#4f3e00",
+                        "primary-fixed": "#ffdbcc",
+                        "secondary-fixed-dim": "#94d3c1",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "surface-container-lowest": "#180b07",
+                        "secondary-fixed": "#afefdd",
+                        "outline-variant": "#584238",
+                        "surface-container-low": "#271814",
+                        "secondary": "#94d3c1",
+                        "surface-container": "#2c1c18",
+                        "error-container": "#93000a",
+                        "background": "#1e100c",
+                        "surface-container-high": "#372622",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "outline": "#a78b7e",
+                        "inverse-primary": "#a04100",
+                        "on-surface": "#fadcd5",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "error": "#ffb4ab",
+                        "on-background": "#fadcd5",
+                        "primary-container": "#ea6b1e",
+                        "tertiary-container": "#cca830",
+                        "primary": "#ffb693",
+                        "surface": "#1e100c",
+                        "on-primary-fixed": "#351000",
+                        "tertiary": "#e9c349",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-surface-variant": "#e0c0b2",
+                        "on-error": "#690005",
+                        "surface-variant": "#43302c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Be Vietnam Pro"],
+                        "headline-lg": ["Bodoni Moda"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "label-lg": ["Be Vietnam Pro"],
+                        "headline-md": ["Bodoni Moda"],
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "headline-xl": ["Bodoni Moda"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #1e100c;
+            color: #fadcd5;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100dvh;
+        }
+
+        .bogolan-divider {
+            height: 24px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='24' viewBox='0 0 100 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 12H100M20 0L30 24M70 0L80 24' stroke='%2343302c' stroke-width='1'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1e100c;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #a78b7e;
+        }
+
+        .product-card-hover .quick-buy-btn {
+            transform: translateY(10px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .product-card-hover:hover .quick-buy-btn {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background selection:bg-primary/30 selection:text-primary">
+    <!-- Header -->
+    <header
+        class="bg-background dark:bg-background flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full top-0 sticky border-b border-outline-variant/30 transition-all duration-300 ease-in-out z-[60]">
+        <a href="./index.html" class="flex items-center gap-4">
+            <h1 class="font-headline-md text-headline-md text-primary dark:text-primary tracking-tight">Aura d'Afrique
+            </h1>
+        </a>
+        <div class="hidden md:flex gap-8">
+            <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors"
+                href="./index.html">Accueil</a>
+            <a class="font-label-lg text-label-lg text-primary" href="./collection.html">Collection</a>
+            <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors"
+                href="./favoris.html">Favoris</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <a href="./panier.html" class="relative">
+                <button
+                    class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">shopping_bag</button>
+            </a>
+        </div>
+    </header>
+
+    <main class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="px-margin-mobile md:px-margin-desktop pt-16 pb-8">
+            <div class="max-w-container-max mx-auto">
+                <span
+                    class="font-label-lg text-label-lg text-secondary uppercase tracking-[0.2em] mb-4 block text-center md:text-left">
+                    Haute Couture Africaine
+                </span>
+                <h2
+                    class="font-headline-xl text-[48px] md:text-headline-xl text-on-surface mb-6 text-center md:text-left">
+                    La Collection
+                </h2>
+                <div class="bogolan-divider w-full opacity-40"></div>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section
+            class="px-margin-mobile md:px-margin-desktop sticky top-16 bg-background/95 backdrop-blur-md z-40 py-4 border-b border-outline-variant/10">
+            <div class="max-w-container-max mx-auto flex flex-wrap items-center justify-between gap-6">
+                <div class="flex flex-wrap gap-4 items-center">
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline/20">
+                            Catégorie <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                        </button>
+                    </div>
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline/20">
+                            Taille <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                        </button>
+                    </div>
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline/20">
+                            Prix <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider mr-2">Couleur:</span>
+                    <button
+                        class="w-5 h-5 rounded-full bg-[#A04100] border border-white/10 hover:scale-110 transition-transform"
+                        title="Terracotta"></button>
+                    <button
+                        class="w-5 h-5 rounded-full bg-[#E9C349] border border-white/10 hover:scale-110 transition-transform"
+                        title="Gold"></button>
+                    <button
+                        class="w-5 h-5 rounded-full bg-[#0B5345] border border-white/10 hover:scale-110 transition-transform"
+                        title="Emerald"></button>
+                    <button
+                        class="w-5 h-5 rounded-full bg-[#180B07] border border-white/20 hover:scale-110 transition-transform"
+                        title="Ebony"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Grid -->
+        <section class="px-margin-mobile md:px-margin-desktop py-12">
+            <div class="max-w-container-max mx-auto grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 md:gap-x-6 gap-y-12 md:gap-y-16"
+                id="product-grid">
+
+                <!-- Product 1 -->
+                <article class="group product-card-hover flex flex-col gap-4">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR2ygnGmsGTrkD8UcxjqTlG6D1gXvI41h4UgM4plWHnkitYJGOHeKglGoT9l64se8O2N7zYbQeQPjSaL5BS2sW3Fg_9bXapDpHdajZMEqmhUggH_inNtbh2FMx1lo9nXworB18znvLbsE5862EgefoXd42zwmjAZNu4y7f4xEQTTYYDPnsGI5t2Mh68-3Rwch2UJpssFFRW5ymwaTZLoIhgsuv6igt5I3c0UJZ_jalTqlyvZ2C916vkagQ5WbEcZI4_STeTqPXrC1P"
+                            alt="Collier Royal Ashanti" />
+                        <div class="absolute top-4 right-4 z-10">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center bg-background/40 backdrop-blur-sm rounded-full text-white hover:text-primary transition-colors favorite-btn">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[85%] quick-buy-btn">
+                            <button
+                                class="w-full h-12 bg-primary-container text-on-primary-container font-label-lg text-label-lg hover:bg-primary transition-colors uppercase tracking-widest">
+                                Achat Rapide
+                            </button>
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 bg-secondary text-on-secondary px-3 py-1 font-label-sm text-label-sm uppercase tracking-widest">Limited</span>
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-1">
+                        <h3 class="font-headline-md text-[20px] md:text-headline-md text-on-surface">Collier Royal
+                            Ashanti</h3>
+                        <p class="font-label-lg text-label-lg text-outline">819 946 FCFA</p>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="group product-card-hover flex flex-col gap-4">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8_WMsoWtbhein4tUYofeEIfMAhrZ94HFN6UHTT2QypU4WzXLPuIVEga1Ve94LUGZ5yoYU1-DO9IXw52GIsLBs6i40wPLtJSBUC-fl3ECcQkKhT4JSrAFOFmNAkwLWNkGUrLWnWjfD8reX9U_5fM_MVmme4LzKpO4_xsh2RKh--mELvBFeP5t48QECPdBJaS6paq4XxGr4QtyopBjFnLVzj5QhKhaSNelKAK-XmXsbO0MFiJzs_z-wxKjyy3dY7HbFIX0QsoOSRnV7"
+                            alt="Robe de Soie Bogolan" />
+                        <div class="absolute top-4 right-4 z-10">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center bg-background/40 backdrop-blur-sm rounded-full text-white hover:text-primary transition-colors favorite-btn">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[85%] quick-buy-btn">
+                            <button
+                                class="w-full h-12 bg-primary-container text-on-primary-container font-label-lg text-label-lg hover:bg-primary transition-colors uppercase tracking-widest">
+                                Achat Rapide
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-1">
+                        <h3 class="font-headline-md text-[20px] md:text-headline-md text-on-surface">Robe de Soie
+                            Bogolan</h3>
+                        <p class="font-label-lg text-label-lg text-outline">583 802 FCFA</p>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="group product-card-hover flex flex-col gap-4">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVLpbKW4p_MffEGaeDUgyaoC_CqyQh3_L5Lto9QpWe2fWjekBuuZtnIW7oP11ISFrGhwz4PLDVo5IWeW75RJkmkJ5K2ocZ1ZmP6hWlWYADM8jYNYR6AcOoi2E-uwjFeLnkzGeavoaz-_9RgqdiXPKZ-oS4aCqu1kvIzt6L1DwHbQJ4dIDMoCTIL1iI848z6VRHHWS8TLPHYl3aXrnlbDA650bv2EAdDo3wqZWQ-oYZ0Z-zcXfQ7Fjy6pN2kzQMdp5iihdtyCV5A2GB"
+                            alt="Boucles d'Émeraude Sahara" />
+                        <div class="absolute top-4 right-4 z-10">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center bg-background/40 backdrop-blur-sm rounded-full text-white hover:text-primary transition-colors favorite-btn">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[85%] quick-buy-btn">
+                            <button
+                                class="w-full h-12 bg-primary-container text-on-primary-container font-label-lg text-label-lg hover:bg-primary transition-colors uppercase tracking-widest">
+                                Achat Rapide
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-1">
+                        <h3 class="font-headline-md text-[20px] md:text-headline-md text-on-surface">Boucles d'Émeraude
+                            Sahara</h3>
+                        <p class="font-label-lg text-label-lg text-outline">426 372 FCFA</p>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="group product-card-hover flex flex-col gap-4">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6HUirzL68vMI3vy76OrwWVKex_eFgI5-9xpIlofXYYHmVTy3AGn5pQF4IXI2_3Amb4kpmHr2vT-H20GrB4noq0nlrmBOmDWMckaHM1_wsF72_d4gFK7wbIusTSiBzpues5bJIJTcuF47Y6UKNmWPGC9Tt2tMf1q01oA-6ZnjvogHhhf0sPVIFSG5g6iA3MqkAgxjM7WSl6Bt5JAcK9b_UVUopp9tJ3bItbwrLDhP5TaOBW9YDAERMVZHVmHSG6G-v0Qz-tlkuKEai"
+                            alt="Pochette Cuir Impérial" />
+                        <div class="absolute top-4 right-4 z-10">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center bg-background/40 backdrop-blur-sm rounded-full text-white hover:text-primary transition-colors favorite-btn">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[85%] quick-buy-btn">
+                            <button
+                                class="w-full h-12 bg-primary-container text-on-primary-container font-label-lg text-label-lg hover:bg-primary transition-colors uppercase tracking-widest">
+                                Achat Rapide
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-1">
+                        <h3 class="font-headline-md text-[20px] md:text-headline-md text-on-surface">Pochette Cuir
+                            Impérial</h3>
+                        <p class="font-label-lg text-label-lg text-outline">275 502 FCFA</p>
+                    </div>
+                </article>
+
+                <!-- Product 5 -->
+                <article class="group product-card-hover flex flex-col gap-4">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDicIz_8vRjCXPUr-pv0OpCLkUYbpZeoKeuDDRjomXWCIm_R2aVhalRmnKfI3shD-DYX5nbmuPSXYzLoqG9tuL-flVXdiGn_PfEYk-7Wva_mXGYdBTNQJyfobWF8KAQNpu_57Px_mTouhiU-0tFoa7KYtibTRcsoWgGwTTeM6Pexvd4Pjt9NJfcjKbJS1swBQKthKhdS0ey0YcjpEN7fOVgUyFECZ8LayYsMaXqA5kuqDM7gA8fwXZdHVW8xmsHUDWyNQSbMoq1KnFt"
+                            alt="Kaftan d'Or Nomade" />
+                        <div class="absolute top-4 right-4 z-10">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center bg-background/40 backdrop-blur-sm rounded-full text-white hover:text-primary transition-colors favorite-btn">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[85%] quick-buy-btn">
+                            <button
+                                class="w-full h-12 bg-primary-container text-on-primary-container font-label-lg text-label-lg hover:bg-primary transition-colors uppercase tracking-widest">
+                                Achat Rapide
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-1">
+                        <h3 class="font-headline-md text-[20px] md:text-headline-md text-on-surface">Kaftan d'Or Nomade
+                        </h3>
+                        <p class="font-label-lg text-label-lg text-outline">1 377 510 FCFA</p>
+                    </div>
+                </article>
+
+                <!-- Product 6 -->
+                <article class="group product-card-hover flex flex-col gap-4">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH70QsxXohfNTwiAdsro60mYEmx5lTnk-yMOiox6yAefs5rOr1v45emihdqcwqurrykcsmT20L28yob0I9g4Gd7LtMIxq87jQ3n03Lreqx7s6bizjDhrzy3M6ywHBxS0YhPl-6Qt8GEeUQv4cCim205A_Lpif0xOsopLQuYXtrFj5z8lYx2rj4fipEYHjJbE4gd4FzBaIi_dfebobPmjSRphkYI6iM-QTDQdLZhzRlgbndTYE8ar8JU3lDRm2ywY-i8l0AAEvJZlwn"
+                            alt="Manchette Ébène & Argent" />
+                        <div class="absolute top-4 right-4 z-10">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center bg-background/40 backdrop-blur-sm rounded-full text-white hover:text-primary transition-colors favorite-btn">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[85%] quick-buy-btn">
+                            <button
+                                class="w-full h-12 bg-primary-container text-on-primary-container font-label-lg text-label-lg hover:bg-primary transition-colors uppercase tracking-widest">
+                                Achat Rapide
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-1">
+                        <h3 class="font-headline-md text-[20px] md:text-headline-md text-on-surface">Manchette Ébène &
+                            Argent</h3>
+                        <p class="font-label-lg text-label-lg text-outline">380 455 FCFA</p>
+                    </div>
+                </article>
+
+                <!-- Product 7 -->
+                <article class="group product-card-hover flex flex-col gap-4">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuALcQFhU-p-1iL7MHRb-Y6yFa0qHKhoAzdu3QIJETR67jkgXiQSTImQIrT-dIKXbAtVHvw6cXwySSVcaJJCtzE_cCGApktptdFYATK0WQgf7kGbhx9DB_C7FdYoO1U24P3zijX7vUA1RSnn39MpazD2ancjaNxUz1tFYjEIEEP8LJ92OWEB6DK0MMWtKrnpyzugDiHzJzogyhSclOync6LPQufUinRt0qupeMDI6f0GmLlvirzE5-hpMS4WgvhwIkM0G7NNOYFZ0SLc"
+                            alt="Bougie Nuit de Lagos" />
+                        <div class="absolute top-4 right-4 z-10">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center bg-background/40 backdrop-blur-sm rounded-full text-white hover:text-primary transition-colors favorite-btn">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[85%] quick-buy-btn">
+                            <button
+                                class="w-full h-12 bg-primary-container text-on-primary-container font-label-lg text-label-lg hover:bg-primary transition-colors uppercase tracking-widest">
+                                Achat Rapide
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-1">
+                        <h3 class="font-headline-md text-[20px] md:text-headline-md text-on-surface">Bougie 'Nuit de
+                            Lagos'</h3>
+                        <p class="font-label-lg text-label-lg text-outline">62 316 FCFA</p>
+                    </div>
+                </article>
+
+                <!-- Product 8 -->
+                <article class="group product-card-hover flex flex-col gap-4">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm_Qfjq81x6sk8LdI4hkaV7ZUmyC3dAY2S5z-2bQC7u9TJXQ3i3iw4YbehqJ7nORQ_C5dD15GC5bKRnDpHDdIwr-lFJINaITKZoCZLmNwL4xIwQvHFW0shajI4-9RK56MqnrYfZ1--RF_EChM-R-GY6rF2cEw74q5uiW4vmxq3oc09nxnuT3V_L1vxxNlxHi2y2dQHA6bDpxMDdrmQULv3MhdEpcoakz2d-N25IwILRAVzpMJGzcuNM2xU_awzvkPxJqw_dLXvXIaM"
+                            alt="Sandales Cuir Sculptural" />
+                        <div class="absolute top-4 right-4 z-10">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center bg-background/40 backdrop-blur-sm rounded-full text-white hover:text-primary transition-colors favorite-btn">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[85%] quick-buy-btn">
+                            <button
+                                class="w-full h-12 bg-primary-container text-on-primary-container font-label-lg text-label-lg hover:bg-primary transition-colors uppercase tracking-widest">
+                                Achat Rapide
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-1">
+                        <h3 class="font-headline-md text-[20px] md:text-headline-md text-on-surface">Sandales Cuir
+                            Sculptural</h3>
+                        <p class="font-label-lg text-label-lg text-outline">229 585 FCFA</p>
+                    </div>
+                </article>
+
+                <!-- Hidden Products -->
+                <article class="group product-card-hover flex flex-col gap-4 hidden additional-product">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc-e-FpYm6Xo_yA5RAt9R96T3Gj6qE77GZ2E4Y8S6F7Q8O9P1R2S3T4U5V6W7X8Y9Z0_1-2-3-4-5-6-7-8-9-0"
+                            alt="Bracelet Manchette Dogon" />
+                        <div class="absolute top-4 right-4 z-10">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center bg-background/40 backdrop-blur-sm rounded-full text-white hover:text-primary transition-colors favorite-btn">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[85%] quick-buy-btn">
+                            <button
+                                class="w-full h-12 bg-primary-container text-on-primary-container font-label-lg text-label-lg hover:bg-primary transition-colors uppercase tracking-widest">
+                                Achat Rapide
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-1">
+                        <h3 class="font-headline-md text-[20px] md:text-headline-md text-on-surface">Bracelet Manchette
+                            "Dogon"</h3>
+                        <p class="font-label-lg text-label-lg text-outline">415 000 FCFA</p>
+                    </div>
+                </article>
+
+                <article class="group product-card-hover flex flex-col gap-4 hidden additional-product">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9_8vRjCXPUr-pv0OpCLkUYbpZeoKeuDDRjomXWCIm_R2aVhalRmnKfI3shD-DYX5nbmuPSXYzLoqG9tuL-flVXdiGn_PfEYk-7Wva_mXGYdBTNQJyfobWF8KAQNpu_57Px_mTouhiU-0tFoa7KYtibTRcsoWgGwTTeM6Pexvd4Pjt9NJfcjKbJS1swBQKthKhdS0ey0YcjpEN7fOVgUyFECZ8LayYsMaXqA5kuqDM7gA8fwXZdHVW8xmsHUDWyNQSbMoq1KnFt"
+                            alt="Veste en Soie Brodée" />
+                        <div class="absolute top-4 right-4 z-10">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center bg-background/40 backdrop-blur-sm rounded-full text-white hover:text-primary transition-colors favorite-btn">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[85%] quick-buy-btn">
+                            <button
+                                class="w-full h-12 bg-primary-container text-on-primary-container font-label-lg text-label-lg hover:bg-primary transition-colors uppercase tracking-widest">
+                                Achat Rapide
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-1">
+                        <h3 class="font-headline-md text-[20px] md:text-headline-md text-on-surface">Veste en Soie
+                            Brodée</h3>
+                        <p class="font-label-lg text-label-lg text-outline">895 000 FCFA</p>
+                    </div>
+                </article>
+
+                <article class="group product-card-hover flex flex-col gap-4 hidden additional-product">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6HUirzL68vMI3vy76OrwWVKex_eFgI5-9xpIlofXYYHmVTy3AGn5pQF4IXI2_3Amb4kpmHr2vT-H20GrB4noq0nlrmBOmDWMckaHM1_wsF72_d4gFK7wbIusTSiBzpues5bJIJTcuF47Y6UKNmWPGC9Tt2tMf1q01oA-6ZnjvogHhhf0sPVIFSG5g6iA3MqkAgxjM7WSl6Bt5JAcK9b_UVUopp9tJ3bItbwrLDhP5TaOBW9YDAERMVZHVmHSG6G-v0Qz-tlkuKEai"
+                            alt="Sac Oshun" />
+                        <div class="absolute top-4 right-4 z-10">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center bg-background/40 backdrop-blur-sm rounded-full text-white hover:text-primary transition-colors favorite-btn">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[85%] quick-buy-btn">
+                            <button
+                                class="w-full h-12 bg-primary-container text-on-primary-container font-label-lg text-label-lg hover:bg-primary transition-colors uppercase tracking-widest">
+                                Achat Rapide
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-1">
+                        <h3 class="font-headline-md text-[20px] md:text-headline-md text-on-surface">Sac "Oshun" en Cuir
+                            de Crocodile</h3>
+                        <p class="font-label-lg text-label-lg text-outline">1 250 000 FCFA</p>
+                    </div>
+                </article>
+
+                <article class="group product-card-hover flex flex-col gap-4 hidden additional-product">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVLpbKW4p_MffEGaeDUgyaoC_CqyQh3_L5Lto9QpWe2fWjekBuuZtnIW7oP11ISFrGhwz4PLDVo5IWeW75RJkmkJ5K2ocZ1ZmP6hWlWYADM8jYNYR6AcOoi2E-uwjFeLnkzGeavoaz-_9RgqdiXPKZ-oS4aCqu1kvIzt6L1DwHbQJ4dIDMoCTIL1iI848z6VRHHWS8TLPHYl3aXrnlbDA650bv2EAdDo3wqZWQ-oYZ0Z-zcXfQ7Fjy6pN2kzQMdp5iihdtyCV5A2GB"
+                            alt="Boucles Sankofa" />
+                        <div class="absolute top-4 right-4 z-10">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center bg-background/40 backdrop-blur-sm rounded-full text-white hover:text-primary transition-colors favorite-btn">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[85%] quick-buy-btn">
+                            <button
+                                class="w-full h-12 bg-primary-container text-on-primary-container font-label-lg text-label-lg hover:bg-primary transition-colors uppercase tracking-widest">
+                                Achat Rapide
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-1">
+                        <h3 class="font-headline-md text-[20px] md:text-headline-md text-on-surface">Boucles d'oreilles
+                            Or "Sankofa"</h3>
+                        <p class="font-label-lg text-label-lg text-outline">310 000 FCFA</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="mt-20 mb-20 flex justify-center">
+                <button
+                    class="px-12 py-4 border border-primary text-primary font-label-lg text-label-lg uppercase tracking-widest hover:bg-primary/5 transition-colors"
+                    id="load-more-btn">
+                    Voir plus de créations
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="bg-surface-container-lowest border-t border-outline-variant/20 pt-16 pb-32 md:pb-16 px-margin-mobile md:px-margin-desktop">
+        <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div class="flex flex-col gap-6">
+                <h3 class="font-headline-md text-primary tracking-tight">Aura d'Afrique</h3>
+                <p class="font-body-md text-on-surface-variant max-w-xs">L'excellence de la haute couture africaine,
+                    fusionnant héritage millénaire et luxe contemporain.</p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded-full text-on-surface-variant hover:border-primary hover:text-primary transition-colors"
+                        href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+                    <a class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded-full text-on-surface-variant hover:border-primary hover:text-primary transition-colors"
+                        href="#"><span class="material-symbols-outlined text-lg">share</span></a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-6">
+                <h4 class="font-label-lg text-primary uppercase tracking-widest">Boutique</h4>
+                <ul class="flex flex-col gap-3">
+                    <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors"
+                            href="./collection.html">Toute la Collection</a></li>
+                    <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors"
+                            href="#">Bijoux Royaux</a></li>
+                    <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors"
+                            href="#">Prêt-à-Porter</a></li>
+                    <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors"
+                            href="#">Accessoires</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-6">
+                <h4 class="font-label-lg text-primary uppercase tracking-widest">L'Esprit Aura</h4>
+                <ul class="flex flex-col gap-3">
+                    <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors"
+                            href="#">Notre Héritage</a></li>
+                    <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors"
+                            href="#">Savoir-faire</a></li>
+                    <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors"
+                            href="#">Aide &amp; Contact</a></li>
+                    <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors"
+                            href="#">Livraison &amp; Retours</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-6">
+                <h4 class="font-label-lg text-primary uppercase tracking-widest">Newsletter</h4>
+                <p class="font-body-md text-on-surface-variant">Rejoignez le cercle privilégié d'Aura d'Afrique.</p>
+                <form class="flex flex-col gap-4">
+                    <input
+                        class="bg-surface-container border-outline-variant text-on-surface focus:border-primary focus:ring-0 rounded-none h-12 px-4 placeholder:text-outline/50"
+                        placeholder="Votre email" type="email" />
+                    <button
+                        class="bg-primary-container text-on-primary-container font-label-lg uppercase tracking-widest h-12 hover:bg-primary transition-colors">S'abonner</button>
+                </form>
+            </div>
+        </div>
+        <div
+            class="max-w-container-max mx-auto mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="font-label-sm text-outline text-center md:text-left">© 2026 Aura d'Afrique. Tous droits réservés.
+            </p>
+            <div class="flex gap-6">
+                <a class="font-label-sm text-outline hover:text-primary transition-colors" href="#">Confidentialité</a>
+                <a class="font-label-sm text-outline hover:text-primary transition-colors" href="#">Mentions Légales</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Mobile Nav -->
+    <nav
+        class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-surface-container dark:bg-surface-container border-t border-outline-variant/20 shadow-sm md:hidden">
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors"
+            href="./index.html">
+            <span class="material-symbols-outlined">home</span>
+            <span class="font-label-sm text-label-sm">Accueil</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-full py-1 px-3"
+            href="./collection.html">
+            <span class="material-symbols-outlined">menu_book</span>
+            <span class="font-label-sm text-label-sm">Catalogue</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors"
+            href="./favoris.html">
+            <span class="material-symbols-outlined">favorite</span>
+            <span class="font-label-sm text-label-sm">Favoris</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors"
+            href="./panier.html">
+            <span class="material-symbols-outlined">shopping_bag</span>
+            <span class="font-label-sm text-label-sm">Panier</span>
+        </a>
+    </nav>
+
+    <!-- Script JavaScript Mis à Jour -->
+    <script>
+        // --- GESTION DU PANIER ---
+        function getCart() {
+            return JSON.parse(localStorage.getItem('aura_cart')) || [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem('aura_cart', JSON.stringify(cart));
+            updateCartBadge();
+        }
+
+        function updateCartBadge() {
+            const cart = getCart();
+            const totalCount = cart.reduce((total, item) => total + item.quantity, 0);
+
+            const bagLink = document.querySelector('header a[href*="panier"]') || document.querySelector('header button span.material-symbols-outlined')?.parentElement;
+
+            if (bagLink) {
+                let badge = bagLink.querySelector('.cart-badge');
+                if (!badge) {
+                    badge = document.createElement('span');
+                    badge.className = 'cart-badge absolute -top-1 -right-1 bg-primary-container text-on-primary-container text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center';
+                    bagLink.classList.add('relative');
+                    bagLink.appendChild(badge);
+                }
+                badge.textContent = totalCount;
+                badge.style.display = totalCount > 0 ? 'flex' : 'none';
+            }
+        }
+
+        // --- GESTION DES FAVORIS ---
+        function getFavorites() {
+            return JSON.parse(localStorage.getItem('aura_favorites')) || [];
+        }
+
+        function saveFavorites(favorites) {
+            localStorage.setItem('aura_favorites', JSON.stringify(favorites));
+        }
+
+        function syncFavoriteButtons() {
+            const favorites = getFavorites();
+            document.querySelectorAll('article').forEach(article => {
+                const title = article.querySelector('h3')?.textContent.trim();
+                if (!title) return;
+
+                const productId = title.toLowerCase().replace(/\s+/g, '-');
+                const isFav = favorites.some(item => item.id === productId);
+                const icon = article.querySelector('.favorite-btn span.material-symbols-outlined');
+
+                if (icon) {
+                    if (isFav) {
+                        icon.style.fontVariationSettings = "'FILL' 1";
+                        icon.classList.add('text-primary');
+                    } else {
+                        icon.style.fontVariationSettings = "'FILL' 0";
+                        icon.classList.remove('text-primary');
+                    }
+                }
+            });
+        }
+
+        function toggleFavorite(article) {
+            const title = article.querySelector('h3').textContent.trim();
+            const priceText = article.querySelector('p').textContent.trim();
+            const imageSrc = article.querySelector('img').src;
+            const priceNum = parseInt(priceText.replace(/[^0-9]/g, ''), 10);
+
+            const product = {
+                id: title.toLowerCase().replace(/\s+/g, '-'),
+                title: title,
+                price: priceNum,
+                formattedPrice: priceText,
+                image: imageSrc
+            };
+
+            let favorites = getFavorites();
+            const index = favorites.findIndex(item => item.id === product.id);
+
+            if (index > -1) {
+                favorites.splice(index, 1);
+            } else {
+                favorites.push(product);
+            }
+
+            saveFavorites(favorites);
+            syncFavoriteButtons();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartBadge();
+            syncFavoriteButtons();
+
+            // Gestion Achat Rapide
+            const productGrid = document.getElementById('product-grid');
+            if (productGrid) {
+                productGrid.addEventListener('click', (e) => {
+                    const btn = e.target.closest('.quick-buy-btn button');
+                    if (!btn) return;
+
+                    e.preventDefault();
+
+                    const article = btn.closest('article');
+                    const title = article.querySelector('h3').textContent.trim();
+                    const priceText = article.querySelector('p').textContent.trim();
+                    const imageSrc = article.querySelector('img').src;
+                    const priceNum = parseInt(priceText.replace(/[^0-9]/g, ''), 10);
+
+                    const product = {
+                        id: title.toLowerCase().replace(/\s+/g, '-'),
+                        title: title,
+                        price: priceNum,
+                        formattedPrice: priceText,
+                        image: imageSrc,
+                        quantity: 1
+                    };
+
+                    const cart = getCart();
+                    const existingIndex = cart.findIndex(item => item.id === product.id);
+
+                    if (existingIndex > -1) {
+                        cart[existingIndex].quantity += 1;
+                    } else {
+                        cart.push(product);
+                    }
+
+                    saveCart(cart);
+
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Ajouté !';
+                    btn.classList.add('bg-secondary', 'text-on-secondary');
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.classList.remove('bg-secondary', 'text-on-secondary');
+                    }, 1200);
+                });
+            }
+
+            // Écouteur Clic Favoris
+            document.querySelectorAll('.favorite-btn').forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const article = this.closest('article');
+                    if (article) {
+                        toggleFavorite(article);
+                    }
+                });
+            });
+
+            // Bouton Load More
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function () {
+                    document.querySelectorAll('.additional-product').forEach(item => {
+                        item.classList.remove('hidden');
+                    });
+                    this.parentElement.classList.add('hidden');
+                    syncFavoriteButtons();
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

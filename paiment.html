@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aura d'Afrique - Paiement Sécurisé</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#4b1b00",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-secondary-container": "#86c5b3",
+                        "on-secondary": "#00382e",
+                        "tertiary-fixed": "#ffe088",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#3e2c28",
+                        "on-secondary-fixed-variant": "#065043",
+                        "on-primary": "#562000",
+                        "on-tertiary": "#3c2f00",
+                        "surface-container-highest": "#43302c",
+                        "secondary-container": "#0b5345",
+                        "surface-bright": "#483530",
+                        "inverse-surface": "#fadcd5",
+                        "on-secondary-fixed": "#00201a",
+                        "surface-tint": "#ffb693",
+                        "surface-dim": "#1e100c",
+                        "on-tertiary-container": "#4f3e00",
+                        "primary-fixed": "#ffdbcc",
+                        "secondary-fixed-dim": "#94d3c1",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "surface-container-lowest": "#180b07",
+                        "secondary-fixed": "#afefdd",
+                        "outline-variant": "#584238",
+                        "surface-container-low": "#271814",
+                        "secondary": "#94d3c1",
+                        "surface-container": "#2c1c18",
+                        "error-container": "#93000a",
+                        "background": "#1e100c",
+                        "surface-container-high": "#372622",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "outline": "#a78b7e",
+                        "inverse-primary": "#a04100",
+                        "on-surface": "#fadcd5",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "error": "#ffb4ab",
+                        "on-background": "#fadcd5",
+                        "primary-container": "#ea6b1e",
+                        "tertiary-container": "#cca830",
+                        "primary": "#ffb693",
+                        "surface": "#1e100c",
+                        "on-primary-fixed": "#351000",
+                        "tertiary": "#e9c349",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-surface-variant": "#e0c0b2",
+                        "on-error": "#690005",
+                        "surface-variant": "#43302c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Be Vietnam Pro"],
+                        "headline-lg": ["Bodoni Moda"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "label-lg": ["Be Vietnam Pro"],
+                        "headline-md": ["Bodoni Moda"],
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "headline-xl": ["Bodoni Moda"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e100c;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #a78b7e;
+        }
+
+        .bogolan-divider {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 L20 0 L40 20 L20 40 Z' fill='none' stroke='%23584238' stroke-width='0.5'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            height: 20px;
+            opacity: 0.3;
+        }
+
+        .step-active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #ffb693;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background font-body-md min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopAppBar -->
+    <header
+        class="bg-background dark:bg-background border-b border-outline-variant/30 w-full top-0 sticky z-50 transition-all duration-300 ease-in-out">
+        <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full">
+            <button class="text-primary dark:text-primary hover:opacity-80 transition-opacity">
+                <span class="material-symbols-outlined" data-icon="menu">menu</span>
+            </button>
+            <h1 class="font-headline-md text-headline-md text-primary dark:text-primary tracking-tight">Aura d'Afrique
+            </h1>
+            <button class="text-primary dark:text-primary hover:opacity-80 transition-opacity relative">
+                <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+                <span
+                    class="absolute -top-1 -right-1 bg-primary text-on-primary text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+            </button>
+        </div>
+    </header>
+    <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+        <!-- Multi-step Progress Indicator -->
+        <nav class="flex justify-between items-center mb-16 max-w-2xl mx-auto overflow-hidden">
+            <div class="flex flex-col items-center gap-2 opacity-60">
+                <span class="font-label-lg text-label-lg uppercase tracking-[0.2em]">Livraison</span>
+                <div class="w-2 h-2 rounded-full bg-outline"></div>
+            </div>
+            <div class="h-[1px] flex-1 bg-outline-variant/30 mx-4"></div>
+            <div class="flex flex-col items-center gap-2 relative">
+                <span class="font-label-lg text-label-lg uppercase tracking-[0.2em] text-primary">Paiement</span>
+                <div class="w-3 h-3 rounded-full bg-primary ring-4 ring-primary/20"></div>
+                <div class="absolute -bottom-8 w-max h-1 bg-primary rounded-full blur-[2px] opacity-20"></div>
+            </div>
+            <div class="h-[1px] flex-1 bg-outline-variant/30 mx-4"></div>
+            <div class="flex flex-col items-center gap-2 opacity-60">
+                <span class="font-label-lg text-label-lg uppercase tracking-[0.2em]">Confirmation</span>
+                <div class="w-2 h-2 rounded-full bg-outline"></div>
+            </div>
+        </nav>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <!-- Left Column: Forms -->
+            <div class="lg:col-span-7 space-y-16">
+                <!-- Section: Shipping Address -->
+                <section>
+                    <div class="flex items-center gap-4 mb-8">
+                        <h2 class="font-headline-md text-headline-md text-primary">Adresse de Livraison</h2>
+                        <div class="flex-1 border-b border-outline-variant/30"></div>
+                    </div>
+                    <form class="grid grid-cols-2 gap-x-6 gap-y-10">
+                        <div class="relative group">
+                            <input
+                                class="peer w-full bg-transparent border-0 border-b border-outline focus:border-tertiary transition-colors duration-300 py-2 px-0 focus:ring-0"
+                                id="firstname" name="firstname" placeholder=" " type="text" />
+                            <label
+                                class="absolute left-0 top-2 -translate-y-6 scale-75 origin-top-left text-outline-variant transition-all peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-tertiary"
+                                for="firstname">Prénom</label>
+                        </div>
+                        <div class="relative group">
+                            <input
+                                class="peer w-full bg-transparent border-0 border-b border-outline focus:border-tertiary transition-colors duration-300 py-2 px-0 focus:ring-0"
+                                id="lastname" name="lastname" placeholder=" " type="text" />
+                            <label
+                                class="absolute left-0 top-2 -translate-y-6 scale-75 origin-top-left text-outline-variant transition-all peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-tertiary"
+                                for="lastname">Nom</label>
+                        </div>
+                        <div class="col-span-2 relative group">
+                            <input
+                                class="peer w-full bg-transparent border-0 border-b border-outline focus:border-tertiary transition-colors duration-300 py-2 px-0 focus:ring-0"
+                                id="address" name="address" placeholder=" " type="text" />
+                            <label
+                                class="absolute left-0 top-2 -translate-y-6 scale-75 origin-top-left text-outline-variant transition-all peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-tertiary"
+                                for="address">Adresse</label>
+                        </div>
+                        <div class="relative group">
+                            <input
+                                class="peer w-full bg-transparent border-0 border-b border-outline focus:border-tertiary transition-colors duration-300 py-2 px-0 focus:ring-0"
+                                id="city" name="city" placeholder=" " type="text" />
+                            <label
+                                class="absolute left-0 top-2 -translate-y-6 scale-75 origin-top-left text-outline-variant transition-all peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-tertiary"
+                                for="city">Ville</label>
+                        </div>
+                        <div class="relative group">
+                            <input
+                                class="peer w-full bg-transparent border-0 border-b border-outline focus:border-tertiary transition-colors duration-300 py-2 px-0 focus:ring-0"
+                                id="zip" name="zip" placeholder=" " type="text" />
+                            <label
+                                class="absolute left-0 top-2 -translate-y-6 scale-75 origin-top-left text-outline-variant transition-all peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-tertiary"
+                                for="zip">Code Postal</label>
+                        </div>
+                    </form>
+                </section>
+                <div class="bogolan-divider"></div>
+                <!-- Section: Delivery Options -->
+                <section>
+                    <h2 class="font-headline-md text-headline-md text-primary mb-8">Option de Livraison</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <label
+                            class="relative flex items-center justify-between p-6 cursor-pointer border border-outline-variant/30 hover:border-primary/50 transition-all rounded-lg group">
+                            <input checked="" class="hidden peer" name="delivery" type="radio" />
+                            <div class="flex flex-col">
+                                <span class="font-label-lg text-label-lg">STANDARD</span>
+                                <span class="text-on-surface-variant font-body-md">Livraison en 5-7 jours ouvrés</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-tertiary">OFFERT</span>
+                            </div>
+                            <div
+                                class="absolute inset-0 border-2 border-transparent peer-checked:border-primary rounded-lg pointer-events-none">
+                            </div>
+                        </label>
+                        <label
+                            class="relative flex items-center justify-between p-6 cursor-pointer border border-outline-variant/30 hover:border-primary/50 transition-all rounded-lg group">
+                            <input class="hidden peer" name="delivery" type="radio" />
+                            <div class="flex flex-col">
+                                <span class="font-label-lg text-label-lg uppercase">EXPRESS</span>
+                                <span class="text-on-surface-variant font-body-md">Livraison en 24-48 heures</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-tertiary">16 399 FCFA</span>
+                            </div>
+                            <div
+                                class="absolute inset-0 border-2 border-transparent peer-checked:border-primary rounded-lg pointer-events-none">
+                            </div>
+                        </label>
+                    </div>
+                </section>
+                <div class="bogolan-divider"></div>
+                <!-- Section: Payment Methods -->
+                <section>
+                    <h2 class="font-headline-md text-headline-md text-primary mb-8">Méthode de Paiement</h2>
+                    <div class="space-y-4">
+                        <label
+                            class="flex items-center gap-6 p-6 cursor-pointer border border-outline-variant/30 hover:bg-surface-container-low transition-colors rounded-lg group">
+                            <input checked=""
+                                class="w-5 h-5 text-primary bg-transparent border-outline focus:ring-primary ring-offset-background"
+                                name="payment" type="radio" />
+                            <span class="material-symbols-outlined text-primary"
+                                data-icon="credit_card">credit_card</span>
+                            <span class="font-body-lg text-body-lg flex-1">Carte de Crédit / Débit</span>
+                            <div class="flex gap-2">
+                                <div
+                                    class="w-10 h-6 bg-surface-container-high rounded flex items-center justify-center text-[10px] font-bold opacity-70">
+                                    VISA</div>
+                                <div
+                                    class="w-10 h-6 bg-surface-container-high rounded flex items-center justify-center text-[10px] font-bold opacity-70">
+                                    MC</div>
+                            </div>
+                        </label>
+                        <label
+                            class="flex items-center gap-6 p-6 cursor-pointer border border-outline-variant/30 hover:bg-surface-container-low transition-colors rounded-lg group">
+                            <input
+                                class="w-5 h-5 text-primary bg-transparent border-outline focus:ring-primary ring-offset-background"
+                                name="payment" type="radio" />
+                            <span class="material-symbols-outlined text-primary"
+                                data-icon="account_balance_wallet">account_balance_wallet</span>
+                            <span class="font-body-lg text-body-lg flex-1">PayPal</span>
+                            <div
+                                class="w-12 h-6 flex items-center justify-center font-black italic text-sky-400 text-xs">
+                                PayPal</div>
+                        </label>
+                        <label
+                            class="flex items-center gap-6 p-6 cursor-pointer border border-outline-variant/30 hover:bg-surface-container-low transition-colors rounded-lg group">
+                            <input
+                                class="w-5 h-5 text-primary bg-transparent border-outline focus:ring-primary ring-offset-background"
+                                name="payment" type="radio" />
+                            <span class="material-symbols-outlined text-primary"
+                                data-icon="contactless">contactless</span>
+                            <span class="font-body-lg text-body-lg flex-1">Apple Pay</span>
+                            <div class="flex items-center text-white text-xs font-semibold gap-1"><span
+                                    class="material-symbols-outlined scale-75" data-icon="apple">file_download</span>
+                                Pay</div>
+                        </label>
+                    </div>
+                    <!-- Trust Badges -->
+                    <div
+                        class="mt-12 flex flex-wrap justify-center items-center gap-8 opacity-40 grayscale hover:grayscale-0 transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-xl"
+                                data-icon="verified_user">verified_user</span>
+                            <span class="text-label-sm font-label-sm uppercase tracking-wider">SSL Sécurisé</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-xl" data-icon="lock">lock</span>
+                            <span class="text-label-sm font-label-sm uppercase tracking-wider">Paiement Chiffré</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-xl"
+                                data-icon="local_shipping">local_shipping</span>
+                            <span class="text-label-sm font-label-sm uppercase tracking-wider">Livraison Suivie</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Right Column: Order Summary (Asymmetric/Sticky) -->
+            <aside class="lg:col-span-5 relative">
+                <div class="sticky top-24 space-y-8">
+                    <div class="bg-surface-container p-8 rounded-lg border border-outline-variant/10 shadow-2xl">
+                        <h3
+                            class="font-headline-md text-headline-md mb-8 text-primary border-b border-outline-variant/30 pb-4">
+                            Résumé de la Commande</h3>
+                        <div class="space-y-6 mb-10">
+                            <!-- Product Item 1 -->
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-20 h-24 bg-surface-container-highest rounded overflow-hidden flex-shrink-0">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="A high-end studio product photograph of a handcrafted African textile scarf with intricate geometric patterns in terracotta and deep brown. The scarf is draped elegantly over a minimalist pedestal. Soft warm side-lighting highlights the texture of the organic cotton fabric. The overall aesthetic is one of modern African luxury and refined craftsmanship."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjzmaYhieIGc6BePDY56O3VI0RBM92vLo0brTAUoJEKMdc4mWFEWoLV84OgIKW4YEPAtdqETaV_f7GS3ge6ipXv6nUEwUZEJoT6CWI4CljJ5IdwbJKW9leoln3a1vm85WLFALvjEElbae_3OpMhFqcIqZKItvfluzoeUMWf8YS6iPS8ewUkCQBuRCPIGDw6tYHyTjKCNLgNq-tZIGLIrkeDVvCQymoD0MJkuu6AH6UMZ6hTM8RsHqLhAYd5ZlDsAfieKqlMZZ2i_5O" />
+                                </div>
+                                <div class="flex flex-col justify-between py-1">
+                                    <div>
+                                        <p class="font-headline-md text-sm text-on-surface">Écharpe "Kente" Moderne</p>
+                                        <p class="text-label-sm font-label-sm text-on-surface-variant">Taille: Unique •
+                                            Quantité: 1</p>
+                                    </div>
+                                    <p class="font-label-lg text-label-lg text-tertiary">95 114 FCFA</p>
+                                </div>
+                            </div>
+                            <!-- Product Item 2 -->
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-20 h-24 bg-surface-container-highest rounded overflow-hidden flex-shrink-0">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="A detailed macro photograph of a handcrafted bronze bangle with traditional West African engravings. The jewelry piece sits on a textured chocolate brown surface, illuminated by a warm amber spotlight that creates long, soft shadows. The metal shows a rich patina and exquisite artisan details, embodying a sophisticated ethnic luxury style."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuASUlO5-ANWdOG72eeaE7PVNAtisKWo5VfxsAqEQNutLxwvg8WjOMHjPau-kceMFb_seNOzoIqScIN4jJr1ITX93mVRb4_p2XQBPlqUGoizGKsfjAH77emMabo4Kyf26h4TY5wVCDk3VQSQRyKmtNpmU8EoEnAFkzhmzCpyjWe0bSeupWTe1jhJ_4pI6COaarSeTjBTO_U1Zuq0jIYFoXRGB_HUXePWLjmi53lUCUW65ABulCqUM724nEtMkFP4NM9BuQ1nVKR3SKT7" />
+                                </div>
+                                <div class="flex flex-col justify-between py-1">
+                                    <div>
+                                        <p class="font-headline-md text-sm text-on-surface">Bracelet Bronze "Oshun"</p>
+                                        <p class="text-label-sm font-label-sm text-on-surface-variant">Finition: Antique
+                                            • Quantité: 1</p>
+                                    </div>
+                                    <p class="font-label-lg text-label-lg text-tertiary">55 756 FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Calculations -->
+                        <div class="space-y-3 pt-6 border-t border-outline-variant/30">
+                            <div class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">Sous-total</span>
+                                <span>150 870 FCFA</span>
+                            </div>
+                            <div class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">Livraison</span>
+                                <span class="text-secondary">Offert</span>
+                            </div>
+                            <div class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">TVA (20%)</span>
+                                <span>30 174 FCFA</span>
+                            </div>
+                            <div
+                                class="flex justify-between font-headline-md text-headline-md pt-6 mt-4 border-t border-primary/20">
+                                <span>Total</span>
+                                <span class="text-primary">181 044 FCFA</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full mt-10 bg-primary-container text-on-primary-container hover:bg-tertiary transition-all duration-500 py-5 rounded-lg font-label-lg text-label-lg uppercase tracking-[0.2em] shadow-lg shadow-primary-container/20 group overflow-hidden relative">
+                            <span class="relative z-10">Confirmer la Commande</span>
+                            <div
+                                class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            </div>
+                        </button>
+                        <p
+                            class="text-center mt-6 text-label-sm font-label-sm text-on-surface-variant/60 flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-sm" data-icon="lock_reset">lock_reset</span>
+                            Transaction 100% sécurisée
+                        </p>
+                    </div>
+                    <!-- Discount code field -->
+                    <div class="flex gap-2">
+                        <input
+                            class="flex-1 bg-surface-container-low border-outline-variant/30 border text-label-sm font-label-sm uppercase tracking-widest px-4 focus:border-primary focus:ring-0"
+                            placeholder="CODE PRIVILÈGE" type="text" />
+                        <button
+                            class="px-6 py-3 border border-outline text-label-sm font-label-sm uppercase tracking-widest hover:bg-outline hover:text-background transition-colors">Appliquer</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <!-- Comprehensive Footer -->
+    <footer class="bg-surface-container-lowest border-t border-outline-variant/30 pt-16 pb-32 md:pb-16 mt-24">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Column -->
+                <div class="space-y-6">
+                    <h2 class="font-headline-md text-headline-md text-primary">Aura d'Afrique</h2>
+                    <p class="text-body-md text-on-surface-variant">L'excellence de l'artisanat africain contemporain.
+                        Chaque pièce raconte une histoire, chaque motif préserve un héritage.</p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all"
+                            href="#">
+                            <span class="material-symbols-outlined text-xl">language</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all"
+                            href="#">
+                            <span class="material-symbols-outlined text-xl">share</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Collection Column -->
+                <div class="space-y-6">
+                    <h3 class="font-label-lg text-label-lg uppercase tracking-widest text-primary">Collections</h3>
+                    <ul class="space-y-4 text-body-md text-on-surface-variant">
+                        <li><a class="hover:text-primary transition-colors" href="#">Art Textile</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Bijoux Sculpturaux</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Accessoires de Luxe</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Éditions Limitées</a></li>
+                    </ul>
+                </div>
+                <!-- Support Column -->
+                <div class="space-y-6">
+                    <h3 class="font-label-lg text-label-lg uppercase tracking-widest text-primary">Support Client</h3>
+                    <ul class="space-y-4 text-body-md text-on-surface-variant">
+                        <li><a class="hover:text-primary transition-colors" href="#">Suivre ma Commande</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Livraison &amp; Retours</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Guide des Tailles</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <!-- Newsletter Column -->
+                <div class="space-y-6">
+                    <h3 class="font-label-lg text-label-lg uppercase tracking-widest text-primary">L'Héritage</h3>
+                    <p class="text-body-md text-on-surface-variant">Inscrivez-vous pour recevoir les nouveautés de nos
+                        ateliers.</p>
+                    <div class="flex gap-0 border-b border-outline-variant">
+                        <input class="bg-transparent border-none focus:ring-0 text-on-surface py-2 w-full"
+                            placeholder="Email" type="email" />
+                        <button class="text-primary hover:opacity-70 transition-opacity p-2">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-outline-variant/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-label-sm font-label-sm text-on-surface-variant/60 uppercase tracking-widest">© 2024 AURA
+                    D'AFRIQUE. TOUS DROITS RÉSERVÉS.</p>
+                <div
+                    class="flex gap-8 text-label-sm font-label-sm text-on-surface-variant/60 uppercase tracking-widest">
+                    <a class="hover:text-primary transition-colors" href="#">Mentions Légales</a>
+                    <a class="hover:text-primary transition-colors" href="#">Confidentialité</a>
+                    <a class="hover:text-primary transition-colors" href="#">CGV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bottom Navigation Bar (Hidden on Desktop) -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-surface-container border-t border-outline-variant/20 shadow-sm">
+        <button
+            class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90 transition-transform">
+            <span class="material-symbols-outlined" data-icon="home">home</span>
+            <span class="font-label-sm text-label-sm">Home</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90 transition-transform">
+            <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+            <span class="font-label-sm text-label-sm">Catalogue</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90 transition-transform">
+            <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+            <span class="font-label-sm text-label-sm">Favorites</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90 transition-transform">
+            <span class="material-symbols-outlined" data-icon="person">person</span>
+            <span class="font-label-sm text-label-sm">Profile</span>
+        </button>
+    </nav>
+    <!-- Micro-interaction Scripts -->
+    <script>
+        // Smooth reveal of payment form fields based on selection
+        const paymentRadios = document.querySelectorAll('input[name="payment"]');
+        paymentRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const label = e.target.parentElement.querySelector('.text-body-lg').innerText;
+                console.log(`Payment method changed to: ${label}`);
+            });
+        });
+
+        // Simple form validation visual cue
+        const inputs = document.querySelectorAll('input[type="text"]');
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => {
+                if (input.value.length > 0) {
+                    input.classList.add('border-secondary');
+                } else {
+                    input.classList.remove('border-secondary');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

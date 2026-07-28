@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="dark" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mes Favoris - Aura d'Afrique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Be+Vietnam+Pro:wght@100;300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#4f3e00",
+                        "inverse-primary": "#a04100",
+                        "surface-dim": "#1e100c",
+                        "surface-container": "#2c1c18",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-tertiary-fixed": "#241a00",
+                        "primary-fixed-dim": "#ffb693",
+                        "surface-tint": "#ffb693",
+                        "outline-variant": "#584238",
+                        "surface-container-highest": "#43302c",
+                        "secondary-fixed-dim": "#94d3c1",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "inverse-on-surface": "#3e2c28",
+                        "error": "#ffb4ab",
+                        "on-primary-container": "#4b1b00",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#180b07",
+                        "on-secondary-fixed": "#00201a",
+                        "surface": "#1e100c",
+                        "outline": "#a78b7e",
+                        "surface-bright": "#483530",
+                        "on-secondary-container": "#86c5b3",
+                        "on-secondary": "#00382e",
+                        "surface-container-high": "#372622",
+                        "on-surface-variant": "#e0c0b2",
+                        "inverse-surface": "#fadcd5",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary-container": "#0b5345",
+                        "primary-fixed": "#ffdbcc",
+                        "error-container": "#93000a",
+                        "surface-variant": "#43302c",
+                        "on-primary": "#562000",
+                        "surface-container-low": "#271814",
+                        "tertiary-container": "#cca830",
+                        "secondary-fixed": "#afefdd",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#fadcd5",
+                        "secondary": "#94d3c1",
+                        "primary": "#ffb693",
+                        "on-surface": "#fadcd5",
+                        "on-secondary-fixed-variant": "#065043",
+                        "background": "#1e100c",
+                        "tertiary": "#e9c349",
+                        "primary-container": "#ea6b1e",
+                        "on-tertiary": "#3c2f00",
+                        "on-primary-fixed": "#351000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Be Vietnam Pro"],
+                        "label-sm": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "headline-lg": ["Bodoni Moda"],
+                        "headline-md": ["Bodoni Moda"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "headline-xl": ["Bodoni Moda"],
+                        "body-md": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .bogolan-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20L0 0M40 0L20 20L40 40M0 40L20 20' stroke='%2343302c' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+            opacity: 0.15;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1e100c;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #a78b7e;
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30 custom-scrollbar overflow-x-hidden">
+
+    <header
+        class="bg-background dark:bg-background flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full top-0 sticky border-b border-outline-variant/30 transition-all duration-300 ease-in-out z-[60]">
+        <a href="./index.html" class="flex items-center gap-4">
+            <h1 class="font-headline-md text-headline-md text-primary dark:text-primary tracking-tight">Aura d'Afrique
+            </h1>
+        </a>
+        <div class="hidden md:flex gap-8">
+            <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors"
+                href="./index.html">Accueil</a>
+            <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors"
+                href="./collection.html">Catalogue</a>
+            <a class="font-label-lg text-label-lg text-primary" href="./favoris.html">Favoris</a>
+        </div>
+        <a href="panier.html" class="flex items-center gap-4">
+            <button
+                class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">shopping_bag</button>
+        </a>
+    </header>
+
+    <main class="pt-24 pb-32 min-h-screen relative overflow-hidden">
+        <div class="absolute inset-0 bogolan-pattern pointer-events-none"></div>
+        <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+            <div class="mb-12 text-center md:text-left">
+                <h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mb-2">Mes
+                    Favoris</h2>
+                <div class="h-px w-24 bg-tertiary/50 mx-auto md:mx-0"></div>
+                <p class="font-body-md text-on-surface-variant mt-4 max-w-lg">
+                    Une sélection de vos pièces d'exception, prêtes à rejoindre votre collection personnelle.
+                </p>
+            </div>
+
+            <div id="favorites-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            </div>
+
+            <div id="action-bar"
+                class="flex flex-col md:flex-row justify-center items-center gap-6 mt-12 py-8 border-y border-outline-variant/20 hidden">
+                <button id="add-all-to-cart-btn"
+                    class="w-full md:w-auto px-12 py-4 bg-primary text-on-primary font-label-lg tracking-[0.2em] hover:brightness-110 transition-all active:scale-95 flex items-center justify-center gap-3 uppercase">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    AJOUTER TOUT AU PANIER
+                </button>
+                <a href="./collection.html"
+                    class="w-full md:w-auto px-12 py-4 border border-tertiary text-tertiary font-label-lg tracking-[0.2em] hover:bg-tertiary/5 transition-all active:scale-95 text-center uppercase">
+                    CONTINUER LE SHOPPING
+                </a>
+            </div>
+
+            <div id="empty-state" class="flex flex-col items-center justify-center py-20 text-center hidden">
+                <span class="material-symbols-outlined text-[80px] text-outline-variant mb-6">heart_broken</span>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-4">Votre liste est vide</h3>
+                <p class="font-body-md text-on-surface-variant mb-8 max-w-sm">
+                    Parcourez notre collection d'exception et enregistrez vos pièces coup de cœur ici.
+                </p>
+                <a href="./collection.html"
+                    class="px-8 py-3 bg-primary text-on-primary font-label-lg tracking-widest uppercase hover:bg-primary-container transition-colors">
+                    EXPLORER LE CATALOGUE
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-surface-container-low border-t border-outline-variant/20 pt-16 pb-32">
+        <div
+            class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <h4 class="font-headline-md text-headline-md text-primary mb-6">Rejoignez l'héritage</h4>
+                <p class="font-body-md text-on-surface-variant mb-8 max-w-md">
+                    Inscrivez-vous à notre lettre d'information pour recevoir des invitations exclusives à nos ventes
+                    privées.
+                </p>
+                <form class="flex max-w-md">
+                    <input
+                        class="flex-grow bg-transparent border-b border-outline-variant py-3 focus:outline-none focus:border-tertiary transition-colors text-on-surface"
+                        placeholder="Votre adresse e-mail" type="email" />
+                    <button
+                        class="ml-4 pb-1 border-b-2 border-primary text-primary font-label-lg hover:text-tertiary hover:border-tertiary transition-all">S'INSCRIRE</button>
+                </form>
+            </div>
+            <div>
+                <h5 class="font-label-lg text-on-surface mb-6">DÉCOUVRIR</h5>
+                <ul class="space-y-4 text-label-sm text-on-surface-variant tracking-wide">
+                    <li><a class="hover:text-primary transition-colors" href="#">Notre Histoire</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="./collection.html">Le Catalogue</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Artisans & Savoir-faire</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Éditions Limitées</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-label-lg text-on-surface mb-6">ASSISTANCE</h5>
+                <ul class="space-y-4 text-label-sm text-on-surface-variant tracking-wide">
+                    <li><a class="hover:text-primary transition-colors" href="#">Livraison & Retours</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Guide des Tailles</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center text-[10px] text-on-surface-variant tracking-[0.2em] uppercase">
+            <p>© 2026 Aura d'Afrique. Tous droits réservés.</p>
+            <div class="flex gap-8 mt-4 md:mt-0">
+                <a class="hover:text-primary transition-colors" href="#">Mentions Légales</a>
+                <a class="hover:text-primary transition-colors" href="#">Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <nav
+        class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container dark:bg-surface-container border-t border-outline-variant/20 shadow-sm flex justify-around items-center h-20 px-4 w-full md:hidden">
+        <a href="./index.html"
+            class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+            <span class="material-symbols-outlined mb-1">home</span>
+            <span class="font-label-sm text-label-sm">Accueil</span>
+        </a>
+        <a href="./collection.html"
+            class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+            <span class="material-symbols-outlined mb-1">grid_view</span>
+            <span class="font-label-sm text-label-sm">Catalogue</span>
+        </a>
+        <a href="./favoris.html"
+            class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1">
+            <span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">favorite</span>
+            <span class="font-label-sm text-label-sm">Favoris</span>
+        </a>
+        <a href="./panier.html"
+            class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+            <span class="material-symbols-outlined mb-1">shopping_bag</span>
+            <span class="font-label-sm text-label-sm">Panier</span>
+        </a>
+    </nav>
+
+    <script>
+        function getFavorites() {
+            return JSON.parse(localStorage.getItem('aura_favorites')) || [];
+        }
+
+        function saveFavorites(favorites) {
+            localStorage.setItem('aura_favorites', JSON.stringify(favorites));
+            renderFavorites();
+        }
+
+        function getCart() {
+            return JSON.parse(localStorage.getItem('aura_cart')) || [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem('aura_cart', JSON.stringify(cart));
+        }
+
+        function renderFavorites() {
+            const favorites = getFavorites();
+            const grid = document.getElementById('favorites-grid');
+            const emptyState = document.getElementById('empty-state');
+            const actionBar = document.getElementById('action-bar');
+
+            if (favorites.length === 0) {
+                grid.innerHTML = '';
+                grid.classList.add('hidden');
+                actionBar.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            grid.classList.remove('hidden');
+            actionBar.classList.remove('hidden');
+
+            let html = '';
+            favorites.forEach((item, index) => {
+                html += `
+                    <div class="group relative bg-surface-container border border-outline-variant/20 hover:border-tertiary/40 transition-all duration-500 overflow-hidden" data-id="${item.id}">
+                        <div class="aspect-[4/5] relative overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="${item.image}" alt="${item.title}" />
+                            <div class="absolute top-4 right-4 z-20">
+                                <button class="btn-remove-fav w-10 h-10 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-primary border border-primary/20 active:scale-90 transition-transform" data-index="${index}" title="Retirer des favoris">
+                                    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                                </button>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                <button class="btn-add-cart w-full bg-primary text-on-primary py-3 font-label-lg tracking-widest hover:bg-primary-container transition-colors uppercase" data-index="${index}">
+                                    AJOUTER AU PANIER
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-headline-md text-on-surface">${item.title}</h3>
+                                <span class="font-label-lg text-tertiary">${item.formattedPrice || item.price + ' FCFA'}</span>
+                            </div>
+                            <p class="text-label-sm text-on-surface-variant uppercase tracking-wider mb-4">Haute Couture • Édition Limitée</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            grid.innerHTML = html;
+            attachEvents();
+        }
+
+        function attachEvents() {
+            const favorites = getFavorites();
+
+            // Boutons Supprimer des favoris
+            document.querySelectorAll('.btn-remove-fav').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const idx = e.currentTarget.dataset.index;
+                    favorites.splice(idx, 1);
+                    saveFavorites(favorites);
+                });
+            });
+
+            // Boutons Ajouter un produit au panier
+            document.querySelectorAll('.btn-add-cart').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const idx = e.currentTarget.dataset.index;
+                    const product = favorites[idx];
+
+                    addToCart(product);
+
+                    const originalText = e.currentTarget.textContent;
+                    e.currentTarget.textContent = 'AJOUTÉ !';
+                    e.currentTarget.classList.add('bg-secondary', 'text-on-secondary');
+                    setTimeout(() => {
+                        e.currentTarget.textContent = originalText;
+                        e.currentTarget.classList.remove('bg-secondary', 'text-on-secondary');
+                    }, 1200);
+                });
+            });
+        }
+
+        function addToCart(product) {
+            const cart = getCart();
+            const existingIndex = cart.findIndex(item => item.id === product.id);
+
+            if (existingIndex > -1) {
+                cart[existingIndex].quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    title: product.title,
+                    price: product.price,
+                    formattedPrice: product.formattedPrice,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+            saveCart(cart);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFavorites();
+
+            // Ajouter Tout au Panier
+            const addAllBtn = document.getElementById('add-all-to-cart-btn');
+            if (addAllBtn) {
+                addAllBtn.addEventListener('click', () => {
+                    const favorites = getFavorites();
+                    favorites.forEach(product => addToCart(product));
+
+                    const originalText = addAllBtn.innerHTML;
+                    addAllBtn.innerHTML = '<span class="material-symbols-outlined">check</span> TOUT EST AJOUTÉ !';
+                    addAllBtn.classList.add('bg-secondary', 'text-on-secondary');
+                    setTimeout(() => {
+                        addAllBtn.innerHTML = originalText;
+                        addAllBtn.classList.remove('bg-secondary', 'text-on-secondary');
+                    }, 1500);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
